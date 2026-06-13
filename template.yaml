@@ -10,9 +10,7 @@ Resources:
   WatchlistFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: watchlist/
-      Handler: app.lambda_handler
-      Runtime: python3.14
+      PackageType: Image
       Architectures:
         - x86_64
       Policies:
@@ -44,6 +42,10 @@ Resources:
           Properties:
             Path: /items/{id}
             Method: delete
+    Metadata:
+      DockerTag: latest
+      DockerContext: ./watchlist
+      Dockerfile: Dockerfile
 
   WatchlistTable:
     Type: AWS::DynamoDB::Table

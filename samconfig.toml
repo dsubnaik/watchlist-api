@@ -19,8 +19,7 @@ confirm_changeset = true
 resolve_s3 = true
 stack_name = "watchlist-api"
 s3_prefix = "watchlist-api"
-region = "us-east-1"
-image_repositories = []
+image_repositories = ["WatchlistFunction=824033491151.dkr.ecr.us-east-1.amazonaws.com/watchlistapi30633b21/watchlistfunctiond8b77c3erepo"]
 
 [default.package.parameters]
 resolve_s3 = true
